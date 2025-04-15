@@ -101,7 +101,7 @@ Constraints:
         //}
 
         public bool isSymmetric(int num)
-        {
+        { // using math -> 123456 ->123000 & 456 then 123 and 456 and checking sum
             int digits = countDigits(num);
             if (digits % 2 != 0) return false;
 
