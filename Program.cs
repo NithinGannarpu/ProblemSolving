@@ -30,8 +30,23 @@ int[] arra = [1,2,3,4];
 List<int> ints = new List<int>();
 List<List<int>> allSubsets = new List<List<int>>();
 subsetSum.solveSubset(6,arra.Length-1,arra,ints,allSubsets);
-foreach(var subset in allSubsets)
-{
-    Console.WriteLine(string.Join(", ", subset));
-}
+// foreach(var subset in allSubsets)
+// {
+//     Console.WriteLine(string.Join(", ", subset));
+// }
+
+int[] nums = { 3, 1, 2, 3 };
+        int target = 6;
+        List<List<int>> result = new List<List<int>>();
+        List<int> curr = new List<int>();
+        subsetSum.solveSubsetMemo(target,nums.Length-1,nums,curr,result);
+
+        // Console.WriteLine("Subsets that sum to " + target + ":");
+        // foreach (var subset in result)
+        // {
+        //     Console.WriteLine(string.Join(", ", subset));
+        // }
+
+CountPairs countPairs = new CountPairs();
+// Console.WriteLine(countPairs.CpPair([1,2,3,4],1));
 

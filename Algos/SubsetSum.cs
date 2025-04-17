@@ -49,6 +49,33 @@ namespace Leetcodeee.Algos
             solveSubset(sum,index-1,arr,current,allSubsets);
 
             return;
-        }
+        }//Always use new List<int>(current) when storing paths during recursive backtracking. Otherwise, you’re storing references to a single changing list, not distinct snapshots.
+    
+        HashSet<(int, int)> memo = new HashSet<(int, int)>();
+
+public void solveSubsetMemo(int sum, int index, int[] nums, List<int> current, List<List<int>> allSubsets)
+{ // this one is bs..... do not use it..    
+    if (sum < 0 || index < 0)
+        return;
+
+    if (sum == 0)
+    {
+        allSubsets.Add(new List<int>(current));
+        return;
+    }
+
+    var key = (index, sum);
+    if (memo.Contains(key))
+        return;
+
+    current.Add(nums[index]);
+    solveSubsetMemo(sum - nums[index], index - 1, nums, current, allSubsets);
+
+    current.RemoveAt(current.Count - 1); 
+    solveSubsetMemo(sum, index - 1, nums, current, allSubsets);
+
+    memo.Add(key);
+}
+
     }
 }
