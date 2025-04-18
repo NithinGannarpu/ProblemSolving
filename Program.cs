@@ -1,6 +1,7 @@
 ﻿using System.Net.WebSockets;
 using Leetcodeee.Algos;
 using Leetcodeee.Easy;
+using Leetcodeee.Medium;
 
 SymmetricNums symmetricNums = new SymmetricNums();
 GoodTriplets goodTriplets = new GoodTriplets();
@@ -49,4 +50,7 @@ int[] nums = { 3, 1, 2, 3 };
 
 CountPairs countPairs = new CountPairs();
 // Console.WriteLine(countPairs.CpPair([1,2,3,4],1));
+
+Number_of_Partitions number_Of_Partitions = new();
+Console.WriteLine(number_Of_Partitions.NumberOfPartitions("aaacb"));
 
